@@ -1,0 +1,54 @@
+import React from 'react'
+import { FormControl, FormItem, FormLabel, FormMessage } from "@/Components/ui/form"
+import { Input } from "@/Components/ui/input"
+import { Controller, FieldValues, Path, Control } from "react-hook-form"
+
+
+interface FormFieldProps<T extends FieldValues> {
+    control: Control<T>;
+    name: Path<T>;
+    label: string;
+    placeholder?: string;
+    type?: 'text' | 'email' | 'password' | 'file';
+    disabled?: boolean;
+    inputRef?: React.Ref<HTMLInputElement>;
+}
+
+const FormField = <T extends FieldValues>({
+                                              control,
+                                              name,
+                                              label,
+                                              placeholder,
+                                              type = "text",
+                                              disabled = false,
+                                              inputRef
+                                          }: FormFieldProps<T>) => (
+    <Controller
+        control={control}
+        name={name}
+        render={({ field }) => (
+            <FormItem>
+                <FormLabel className="text-sm font-medium text-white/80">{label}</FormLabel>
+                <FormControl>
+                    <Input
+                        {...field}
+                        ref = { inputRef ?? field.ref }
+                        className={`mt-2 h-11 rounded-xl border-white/15 bg-black/20 px-4 text-white placeholder:text-white/35 ${disabled ? "opacity-40 cursor-not-allowed" : ""}`}
+                        placeholder={placeholder}
+                        type={type}
+                        disabled={disabled}
+                        title={ disabled ? "Please fill previous fields first" : ""}
+                        // For file input, value cannot be set programmatically
+                        {...(type === "file" ? {
+                            value: undefined,
+                            onChange: (e: React.ChangeEvent<HTMLInputElement>) =>
+                                field.onChange(e.target.files) } : {})}
+                    />
+                </FormControl>
+                <FormMessage />
+            </FormItem>
+        )}
+    />
+)
+
+export default FormField

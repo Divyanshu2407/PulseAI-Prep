@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="470" height="124" viewBox="24 44 470 124" fill="none">
+  <defs>
+    <linearGradient id="frame-pink" x1="32" y1="52" x2="144" y2="164" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F9A8D4"/><stop offset="0.55" stop-color="#F472B6"/><stop offset="1" stop-color="#DB2777"/>
+    </linearGradient>
+    <linearGradient id="inner-dark" x1="47" y1="66" x2="130" y2="153" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#211A2D"/><stop offset="1" stop-color="#111017"/>
+    </linearGradient>
+    <linearGradient id="signal" x1="51" y1="77" x2="110" y2="149" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBCFE8"/><stop offset="0.55" stop-color="#F0ABFC"/><stop offset="1" stop-color="#F472B6"/>
+    </linearGradient>
+    <linearGradient id="app-wordmark" x1="174" y1="80" x2="486" y2="125" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#CAC5FE"/><stop offset="1" stop-color="#F472B6"/>
+    </linearGradient>
+  </defs>
+  <rect x="32" y="52" width="112" height="112" rx="32" fill="#170D17" stroke="url(#frame-pink)" stroke-width="5"/>
+  <rect x="45" y="65" width="86" height="86" rx="23" fill="url(#inner-dark)" stroke="#F9A8D4" stroke-opacity="0.28"/>
+  <!-- Centered mark; reduced outer-arc reach leaves breathing room from the inset edge -->
+  <g transform="translate(16.6 9.5) scale(0.89)">
+    <path d="M94 78H77C62.64 78 51 89.64 51 104V115C51 126 58.15 135.33 68.2 138.9L64 151L80.8 141H94" stroke="url(#signal)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="68" cy="108" r="4.5" fill="#FBCFE8"/>
+    <path d="M78 100Q87 108 78 116M86 95Q100 108 86 121M94 90Q108 108 94 126" stroke="url(#signal)" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <text x="174" y="112" fill="url(#app-wordmark)" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="50" font-weight="700" letter-spacing="-1.8">PulseAI<tspan dx="12" font-weight="600" letter-spacing="-1.4">Prep</tspan></text>
+  <text x="177" y="148" fill="#A5A0B2" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="600" letter-spacing="2.4">AI INTERVIEW PRACTICE</text>
+</svg>
